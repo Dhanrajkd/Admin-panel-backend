@@ -34,7 +34,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/employee_img",express.static("employee_img"))
 app.use('/',studentroutes)
 app.use("/",Employeerouter)
-app.use("/",Admins)
+/* app.use("/",Admins) */
 app.use("/",Course)
 app.use("/",Batch)
 app.use("/",Fees)
