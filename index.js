@@ -21,9 +21,8 @@ app.listen(PORT,()=>{
 app.get('/',(req,res)=>{
     res.send("server is running")
 })
-app.get("/test", (req, res) => {
-  res.json({ message: "Backend working" });
-});
+app.use("/api/admin", adminRouter);
+
 mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mongodb.net/")
 .then(()=>{
     console.log("Db connected")
