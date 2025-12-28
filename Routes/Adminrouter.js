@@ -7,4 +7,8 @@ router.get("/get_admin",get_admin)
 router.post("/check_admin",check_admin)
 router.post("/check_email",check_email)
 router.patch("/new_password",new_password)
+router.get("/test", (req, res) => {
+  res.send("admin route working");
+});
+
 export default router
