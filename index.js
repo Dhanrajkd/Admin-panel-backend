@@ -21,7 +21,7 @@ app.listen(PORT,()=>{
 app.get('/',(req,res)=>{
     res.send("server is running")
 })
-app.use("/api/admin", adminrouter);
+app.use("/api/admin", Admins);
 
 mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mongodb.net/")
 .then(()=>{
