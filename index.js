@@ -8,7 +8,6 @@ import Admins from './Routes/Adminrouter.js'
 import Course from "./Routes/Courcerouter.js"
 import Batch from "./Routes/Batchrouter.js"
 import Fees from './Routes/Feesrouter.js'
-/* const port=4000 */
 const app=express()
 const PORT = process.env.PORT || 4000;
 app.use(express.json())
@@ -21,7 +20,7 @@ app.listen(PORT,()=>{
 app.get('/',(req,res)=>{
     res.send("server is running")
 })
-app.use("/api/admin", Admins);
+
 
 mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mongodb.net/")
 .then(()=>{
@@ -30,11 +29,11 @@ mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mo
 .catch((err)=>{
     console.log(err)
 })
-app.use("/uploads", express.static("uploads"));
+app.use("/api/admin", Admins);
+app.use("/api/admin/uploads", express.static("uploads"));
 app.use("/employee_img",express.static("employee_img"))
-app.use('/',studentroutes)
+app.use('/api/admin',studentroutes)
 app.use("/",Employeerouter)
-/* app.use("/",Admins) */
 app.use("/",Course)
 app.use("/",Batch)
 app.use("/",Fees)

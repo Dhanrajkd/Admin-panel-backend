@@ -10,5 +10,4 @@ router.patch("/new_password",new_password)
 router.get("/test", (req, res) => {
   res.send("admin route working");
 });
-
 export default router
