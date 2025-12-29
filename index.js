@@ -33,7 +33,7 @@ app.use("/api/admin", Admins);
 app.use("/api/admin/uploads", express.static("uploads"));
 app.use("/employee_img",express.static("employee_img"))
 app.use('/api/admin',studentroutes)
-app.use("/",Employeerouter)
-app.use("/",Course)
-app.use("/",Batch)
-app.use("/",Fees)
+app.use("/api/admin",Employeerouter)
+app.use("/api/admin",Course)
+app.use("/api/admin",Batch)
+app.use("/api/admin",Fees)
