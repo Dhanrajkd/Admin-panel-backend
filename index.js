@@ -19,9 +19,9 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
-app.get('/',(req,res)=>{
-    res.send("server is running")
-})
+app.get("/", (req, res) => {
+  res.send("Admin Panel Backend Live 🚀");
+});
 
 
 mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mongodb.net/")
