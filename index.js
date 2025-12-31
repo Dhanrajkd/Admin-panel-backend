@@ -9,14 +9,16 @@ import Course from "./Routes/Courcerouter.js"
 import Batch from "./Routes/Batchrouter.js"
 import Fees from './Routes/Feesrouter.js'
 const app=express()
-const PORT = process.env.PORT || 4000;
+
 app.use(express.json())
 app.use(cors({
   origin: "*",
 }));
-app.listen(PORT,()=>{
-    console.log(`server running in${PORT}`)
-})
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});
 app.get('/',(req,res)=>{
     res.send("server is running")
 })
