@@ -1,7 +1,6 @@
 import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
-import multer from 'multer'
 import studentroutes from "./Routes/Studentrouter.js"
 import Employeerouter from "./Routes/Employeerouter.js"
 import Admins from './Routes/Adminrouter.js'
@@ -14,11 +13,8 @@ app.use(express.json())
 app.use(cors({
   origin: "*",
 }));
-const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
-});
+
 app.get("/", (req, res) => {
   res.send("Admin Panel Backend Live 🚀");
 });
