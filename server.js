@@ -15,9 +15,6 @@ app.use(cors())
 app.use(cors({
   origin: "*",
 }));
-app.listen(PORT,()=>{
-    console.log(`server running in${PORT}`)
-})
 app.get("/", (req, res) => {
   res.send("Admin Panel Backend Live 🚀");
 });

@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
   res.send("Admin Panel Backend Live 🚀");
 });
 
+const port=4000
 
 mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mongodb.net/")
 .then(()=>{
@@ -27,6 +28,8 @@ mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mo
 .catch((err)=>{
     console.log(err)
 })
+
+
 app.use("/api/admin", Admins);
 app.use("/api/admin/uploads", express.static("uploads"));
 app.use("/employee_img",express.static("employee_img"))
