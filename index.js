@@ -23,15 +23,18 @@ const port=4000
 
 mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mongodb.net/")
 .then(()=>{
-    console.log("Db connected")
+    console.log("Db connected index")
 })
 .catch((err)=>{
     console.log(err)
 })
 
-app.listen(port,(req,res)=>{
-  console.log(`server running ${port}`)
-})
+const PORT = process.env.PORT;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 app.use("/api/admin", Admins);
 app.use("/api/admin/uploads", express.static("uploads"));
