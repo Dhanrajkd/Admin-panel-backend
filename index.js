@@ -29,6 +29,9 @@ mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mo
     console.log(err)
 })
 
+app.listen(port,(req,res)=>{
+  console.log(`server running ${port}`)
+})
 
 app.use("/api/admin", Admins);
 app.use("/api/admin/uploads", express.static("uploads"));
