@@ -35,6 +35,9 @@ app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" })
+});
 
 app.use("/api/admin", Admins);
 app.use("/api/admin/uploads", express.static("uploads"));
