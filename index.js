@@ -9,17 +9,18 @@ import Batch from "./Routes/Batchrouter.js"
 import Fees from './Routes/Feesrouter.js'
 const app=express()
 
+
+app.use(cors({ origin: "*" }));
+
 app.use(express.json())
-app.use(cors({
-  origin: "*",
-}));
 
-
+app.get("/test", (req, res) => {
+  res.json({ msg: "Server OK" });
+});
 app.get("/", (req, res) => {
   res.send("Admin Panel Backend Live 🚀");
 });
 
-const port=4000
 
 mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mongodb.net/")
 .then(()=>{
@@ -29,11 +30,8 @@ mongoose.connect("mongodb+srv://dhanrajd158_db_user:test1234@cluster0.dmc0nz2.mo
     console.log(err)
 })
 
-const PORT = process.env.PORT;
-
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
 app.get("/health", (req, res) => {
   res.json({ status: "ok" })
